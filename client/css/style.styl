@@ -1,0 +1,129 @@
+/*-- Font --*/
+roboto-font = 'Roboto', sans-serif
+font-default = 1rem
+font-bold = 600
+font-regular = 400
+font-light = 300
+
+/*--- Image ---*/
+banner-head = url('/img/head-banner.jpg')
+
+/*--- Color ---*/
+white = #ffffff
+grey = #666666
+dark-grey = #333333
+blue-fb = #4267B2
+grey-bg = #e0e0e0
+
+/*--- Size ---*/
+one = 1rem
+two = 2rem
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+border-radius()
+  vendor('border-radius', arguments)
+  
+border()
+  vendor('border', arguments)
+
+body
+  margin: 0
+  font-family: roboto-font
+  font-size: font-default
+  font-weight: 400
+  line-height: 1.5
+  color: #212529
+  text-align: left
+  background-color: #fff
+
+header
+  background-image: banner-head
+  
+.hw-head-sec
+  padding: 5rem 0
+  
+  h1
+    color: white
+    
+.page-container
+  max-width: 1200px
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  
+.hw-container
+  max-width: 1100px
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  
+section
+  margin-bottom: one
+  
+.desc-sec
+  padding: 0 15px
+  
+  h1
+    color: dark-grey
+    font-family: roboto-font
+    font-weight: font-bold
+  
+  h3
+    color: grey
+    font-family: roboto-font
+    font-weight: font-bold
+    margin-bottom: one
+    
+  .col-6
+    margin-bottom: one
+    
+  .col-12
+    margin-bottom: one
+    
+.btn-fb
+  background-color: blue-fb
+  border-radius: 2px
+  color: white
+  padding: .258rem .8rem
+  text-decoration: none
+  
+.btn-fb:hover
+  color: #e0e0e0
+  text-decoration:none
+  
+.bg-grey
+  color: dark-grey
+  background-color: grey-bg !important
+  
+.bg-grey.nav-item.nav-link
+  border-radius 0
+  
+.bg-grey.nav-item.nav-link.active
+  border none
+  font-weight: font-bold
+  
+.bg-grey.tab-pane
+  padding: two
+  
+@media (max-width: 600px)
+
+  @media (min-width: 320px)
+    .mobile-order-1
+      -ms-flex-order: 1
+      order: 1
+      
+    .mobile-order-2
+      -ms-flex-order: 2
+      order: 2
+      
+    .desc-sec
+    
+      .col-6
+        margin-bottom: .65rem
+        
+      .col-12
+        margin-bottom: .65rem

@@ -14,10 +14,16 @@ grey = #666666
 dark-grey = #333333
 blue-fb = #4267B2
 grey-bg = #e0e0e0
+soft-grey-bg = #eeeeee
 
 /*--- Size ---*/
 one = 1rem
+one-half = .5rem
 two = 2rem
+one-tb = 1rem 0
+one-lr = 0 1rem
+one-half-lr = 0 .5rem
+btn-pad = .258rem .8rem
 
 vendor(prop, args)
   -webkit-{prop} args
@@ -29,6 +35,9 @@ border-radius()
   
 border()
   vendor('border', arguments)
+
+column()
+  vendor('column-count', arguments)
 
 body
   margin: 0
@@ -88,7 +97,7 @@ section
   background-color: blue-fb
   border-radius: 2px
   color: white
-  padding: .258rem .8rem
+  padding: btn-pad
   text-decoration: none
   
 .btn-fb:hover
@@ -105,9 +114,79 @@ section
 .bg-grey.nav-item.nav-link.active
   border none
   font-weight: font-bold
+  background-color: soft-grey-bg !important
   
 .bg-grey.tab-pane
   padding: two
+  
+.card-thumb
+  background-color: soft-grey-bg
+  max-width:100%
+  min-width:100%
+  
+  h4
+    font-family: inherit
+    font-weight: 500
+    color: dark-grey
+    padding: 1rem .5rem 0 .5rem
+    
+  .price
+    font-family: inherit
+    font-weight: 500
+    color: dark-grey
+    padding: one-half-lr
+    
+.card-thumb.out-of-stock
+  background-color: soft-grey-bg
+  max-width:100%
+  min-width:100%
+  
+  h4
+    font-family: inherit
+    font-weight: 500
+    color: grey
+    padding: 1rem .5rem 0 .5rem
+    text-decoration: line-through
+    
+  .price
+    font-family: inherit
+    font-weight: 500
+    color: grey
+    padding: one-half-lr
+    text-decoration: line-through
+    
+  .btn-buy
+    background-color: dark-grey !important
+    color: white !important
+    
+.card-thumb.best-price
+  background-color: soft-grey-bg
+  max-width:100%
+  min-width:100%
+  border 1px solid red !important
+  
+  img
+    padding: one-half
+    background-color: red
+  
+.list-item
+  column 4
+  
+.btn-buy
+  background-color: blue-fb
+  border-radius: 2px
+  color: white
+  padding: btn-pad
+  text-decoration: none
+  font-family: inherit
+  font-weight: 500
+  border none
+  margin-left: one-half
+  margin-bottom: one
+  
+.btn-buy:hover
+  color: dark-grey !important
+  
   
 @media (max-width: 600px)
 
@@ -127,3 +206,9 @@ section
         
       .col-12
         margin-bottom: .65rem
+        
+    .list-item
+      column 2
+      
+    .nav-tabs
+      justify-content: center

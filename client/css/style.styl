@@ -18,11 +18,11 @@ soft-grey-bg = #eeeeee
 
 /*--- Size ---*/
 one = 1rem
-one-half = .5rem
+half = .5rem
 two = 2rem
 one-tb = 1rem 0
 one-lr = 0 1rem
-one-half-lr = 0 .5rem
+half-lr = 0 .5rem
 btn-pad = .258rem .8rem
 
 vendor(prop, args)
@@ -110,11 +110,12 @@ section
   
 .bg-grey.nav-item.nav-link
   border-radius 0
+  background-color: soft-grey-bg !important
   
 .bg-grey.nav-item.nav-link.active
   border none
   font-weight: font-bold
-  background-color: soft-grey-bg !important
+  background-color: grey-bg !important
   
 .bg-grey.tab-pane
   padding: two
@@ -126,6 +127,7 @@ section
   
   h4
     font-family: inherit
+    font-size: 22px
     font-weight: 500
     color: dark-grey
     padding: 1rem .5rem 0 .5rem
@@ -134,7 +136,7 @@ section
     font-family: inherit
     font-weight: 500
     color: dark-grey
-    padding: one-half-lr
+    padding: half-lr
     
 .card-thumb.out-of-stock
   background-color: soft-grey-bg
@@ -152,7 +154,7 @@ section
     font-family: inherit
     font-weight: 500
     color: grey
-    padding: one-half-lr
+    padding: half-lr
     text-decoration: line-through
     
   .btn-buy
@@ -164,10 +166,6 @@ section
   max-width:100%
   min-width:100%
   border 1px solid red !important
-  
-  img
-    padding: one-half
-    background-color: red
   
 .list-item
   column 4
@@ -181,12 +179,80 @@ section
   font-family: inherit
   font-weight: 500
   border none
-  margin-left: one-half
+  margin-left: half
   margin-bottom: one
   
 .btn-buy:hover
   color: dark-grey !important
   
+.w-100
+  width: 100%
+  
+.row
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  margin-right: -15px
+  margin-left: -15px
+  
+.col-12, .col-6, .col-lg-3, .col-lg-4, .col-lg-8, .col-lg-9, .col-md-4, .col-md-8
+  position: relative
+  width: 100%
+  min-height: 1px
+  padding-right: 15px
+  padding-left: 15px
+
+
+.*, ::after, ::before
+  box-sizing: border-box
+  
+.nav
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  padding-left: 0
+  margin-bottom: 0
+  list-style: none
+  
+.nav-link
+  display: block
+  padding: .5rem 1rem
+  
+.tab-content>.active
+  display: block
+
+.col-6
+  -ms-flex: 0 0 50%
+  flex: 0 0 50%
+  max-width: 50%
+
+
+.col-12
+  -ms-flex: 0 0 100%
+  flex: 0 0 100%
+  max-width: 100%
+  
+.text-center
+  text-align: center !important
+
+.container
+  width: 100%
+  padding-right: 15px
+  padding-left: 15px
+  margin-right: auto
+  margin-left: auto
+  
+a
+  text-decoration:none !important
+
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+  margin-bottom: 0.5rem
+  
+.pt-2
+  padding-top: 0
   
 @media (max-width: 600px)
 
@@ -212,3 +278,49 @@ section
       
     .nav-tabs
       justify-content: center
+      
+@media (min-width: 992px)
+  .col-lg-3
+    -ms-flex: 0 0 25%
+    flex: 0 0 25%
+    max-width: 25%
+    
+  .col-lg-4
+    -ms-flex: 0 0 33.333333%
+    flex: 0 0 33.333333%
+    max-width: 33.333333%
+    
+  .col-lg-8
+    -ms-flex: 0 0 66.666667%
+    flex: 0 0 66.666667%
+    max-width: 66.666667%
+  
+  .col-lg-9
+    -ms-flex: 0 0 75%
+    flex: 0 0 75%
+    max-width: 75%
+    
+  .container
+    max-width: 960px
+    
+  .pt-2
+    padding-top: two
+    
+  
+@media (min-width: 768px)
+  .col-md-4
+    -ms-flex: 0 0 33.333333%
+    flex: -1 0 33.333333%
+    max-width: 33.333333%
+    
+  .col-md-8
+    -ms-flex: 0 0 66.666667%
+    flex: 0 0 66.666667%
+    max-width: 66.666667%
+    
+  .container
+    max-width: 720px
+    
+@media (min-width: 576px)
+  .container
+    max-width: 540px
